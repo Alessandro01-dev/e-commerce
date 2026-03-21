@@ -1,0 +1,6 @@
+.review-avatar {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border: 1px solid #eee;
+}

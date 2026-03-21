@@ -1,0 +1,5 @@
+.infinite-sentinel {
+  height: 100px;
+  opacity: 0;
+  pointer-events: none;
+}

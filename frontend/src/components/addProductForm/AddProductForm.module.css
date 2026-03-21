@@ -1,0 +1,44 @@
+.dropzone {
+  border: 2px dashed #ced4da;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropzone:hover {
+  border-color: #212529;
+  background: #f1f3f5;
+}
+
+.dropzone.active {
+  border-color: #0d6efd;
+  background: #e7f1ff;
+}
+
+.preview-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.preview-img {
+  max-height: 180px;
+  width: auto;
+  display: block;
+}
+
+.remove-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

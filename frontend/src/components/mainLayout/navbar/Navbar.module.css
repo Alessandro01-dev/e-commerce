@@ -1,0 +1,142 @@
+.logo-container {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  margin: 0;
+}
+
+.settings-icon-container,
+.cart-icon-container {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.settings-icon-container:hover,
+.cart-icon-container:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.cart-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  font-size: 10px;
+  top: 0 !important;
+  left: 65% !important;
+}
+
+.profile-picture-container {
+  width: 44px;
+  height: 44px;
+  transition: transform 0.2s;
+}
+
+.profile-picture-container:hover {
+  transform: scale(1.05);
+}
+
+.nav-item :global(.dropdown-toggle) {
+  color: white !important;
+  font-weight: 300;
+  padding: 0 !important;
+}
+
+.nav-item :global(.dropdown-menu) {
+  margin-top: 10px;
+  width: 70vw;
+  padding: 25px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.profile-dropdown :global(.dropdown-toggle::after) {
+  display: none;
+}
+
+.profile-dropdown :global(.dropdown-toggle) {
+  padding: 0;
+  border: none;
+}
+
+.profile-dropdown :global(.dropdown-toggle:focus) {
+  box-shadow: none !important;
+}
+
+:global(.dropdown-item:active) {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.mega-menu-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.mega-menu-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.mega-menu-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  color: #333;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 6px;
+  white-space: normal;
+  word-wrap: break-word;
+  min-height: 40px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.mega-menu-item {
+  padding: 4px 0 !important;
+  font-size: 0.8rem;
+  background: transparent !important;
+  color: #333 !important;
+  white-space: normal;
+}
+
+.mega-menu-item:hover {
+  color: #007bff !important;
+  text-decoration: underline !important;
+}
+
+@media (max-width: 1200px) {
+  .nav-item :global(.dropdown-menu) {
+    width: 60vw;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .mega-menu-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-item :global(.dropdown-menu) {
+    width: 40vw;
+    max-height: 60vh;
+  }
+
+  .mega-menu-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,43 @@
+.footer-container {
+  background-color: black;
+  color: white;
+  padding: 3rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(108, 117, 125, 0.25);
+}
+
+.logo-wrapper {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  width: 100%;
+  height: auto;
+}
+
+.link-muted {
+  color: rgba(255, 255, 255, 0.5) !important;
+  text-decoration: none;
+}
+
+.link-muted:hover {
+  color: white !important;
+}
+
+.text-muted-custom {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.payment-badge {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+  border: 1px solid #6c757d;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.divider {
+  margin: 3rem 0;
+  border-color: #6c757d;
+}
