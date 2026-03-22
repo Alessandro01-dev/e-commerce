@@ -1,5 +1,5 @@
 const express = require("express")
-const PORT = 4545;
+const PORT = process.env.PORT || 4545;
 const cors = require("cors")
 const startServer = require("./config/db")
 
@@ -16,9 +16,7 @@ const reviewRoute = require('./modules/review/review.route')
 const app = express()
 
 // global middlewares
-app.use(cors({
-  origin: "http://localhost:5173"
-}));
+app.use(cors());
 app.use(express.json())
 
 // passport middlewares
