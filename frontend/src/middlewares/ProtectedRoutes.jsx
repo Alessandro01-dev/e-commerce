@@ -55,7 +55,7 @@ const ProtectedRoutes = () => {
   }
 
   if (isExpired || !authData) {
-    return <Navigate to="/landing" replace state={{ from: location }} />;
+    return <Navigate to="/" replace state={{ from: location }} />;
   }
 
   return <Outlet />;
