@@ -9,7 +9,7 @@ import useProducts from '../hooks/useProducts'
 import { categories } from '../utils/categories'
 
 const Homepage = () => {
-  const { getPopularCategories, popularCategories } = useProducts();
+  const { getPopularCategories, popularCategories, productsIsLoading: categoriesLoading } = useProducts();
   const { getProducts: getDeals, productsData: dealsData, productsIsLoading: dealsLoading } = useProducts()
   const { getProducts: getNewArrivals, productsData: newArrivalsData, productsIsLoading: arrivalsLoading } = useProducts()
 
@@ -38,38 +38,40 @@ const Homepage = () => {
     }).filter(Boolean);
   }, [popularCategories]);
 
+  const isInitialLoading = categoriesLoading || dealsLoading || arrivalsLoading;
+
   return (
     <MainLayout>
       <Hero />
 
-      <HomeCarousel title="Explore Popular Categories" breakpoints={categoryBreakpoints}>
-        {categoriesToShow.map((sub, idx) => (
-          <CategoryCircle key={idx} category={sub} />
-        ))}
-      </HomeCarousel>
-
-      {dealsLoading ? (
-        <Container className="text-center py-5"><Spinner animation="border" /></Container>
+      {isInitialLoading ? (
+        <Container className="text-center py-5 my-5">
+          <Spinner animation="border" variant="dark" />
+        </Container>
       ) : (
-        <HomeCarousel
-          title="Today's Best Deals For You!"
-          viewAllLink="/shop"
-          breakpoints={productBreakpoints}
-        >
-          {dealsData?.products?.map(p => <ProductCard key={p._id} product={p} />)}
-        </HomeCarousel>
-      )}
+        <>
+          <HomeCarousel title="Explore Popular Categories" breakpoints={categoryBreakpoints}>
+            {categoriesToShow.map((sub, idx) => (
+              <CategoryCircle key={idx} category={sub} />
+            ))}
+          </HomeCarousel>
 
-      {arrivalsLoading ? (
-        <Container className="text-center py-5"><Spinner animation="border" /></Container>
-      ) : (
-        <HomeCarousel
-          title="New Arrivals"
-          viewAllLink="/shop"
-          breakpoints={productBreakpoints}
-        >
-          {newArrivalsData?.products?.map(p => <ProductCard key={p._id} product={p} />)}
-        </HomeCarousel>
+          <HomeCarousel
+            title="Today's Best Deals For You!"
+            viewAllLink="/shop"
+            breakpoints={productBreakpoints}
+          >
+            {dealsData?.products?.map(p => <ProductCard key={p._id} product={p} />)}
+          </HomeCarousel>
+
+          <HomeCarousel
+            title="New Arrivals"
+            viewAllLink="/shop"
+            breakpoints={productBreakpoints}
+          >
+            {newArrivalsData?.products?.map(p => <ProductCard key={p._id} product={p} />)}
+          </HomeCarousel>
+        </>
       )}
     </MainLayout>
   )
