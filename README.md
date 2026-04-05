@@ -6,9 +6,8 @@ L'integrazione di un database strutturato con 500 prodotti suddivisi in 50 categ
 
 ---
 
-## 🚀 Status
-Il progetto è attualmente in fase di **Deployment**. 
-Repository GitHub: https://github.com/Alessandro01-dev/e-commerce
+## 🚀 Demo
+L'applicazione è distribuita su Vercel: [https://e-commerce-one-eta-33.vercel.app](https://e-commerce-one-eta-33.vercel.app)
 
 ## ✨ Funzionalità Principali
 
@@ -50,4 +49,5 @@ It provides a seamless shopping experience with advanced search, persistent wish
 
 ## 👤 Author
 **Alessandro Aronica**
-- GitHub: https://github.com/Alessandro01-dev/e-commerce
+- GitHub: [https://github.com/Alessandro01-dev/e-commerce] (https://github.com/Alessandro01-dev/e-commerce)
+- Live Demo: [https://e-commerce-one-eta-33.vercel.app] (https://e-commerce-one-eta-33.vercel.app)
